@@ -1,61 +1,33 @@
-WonderCMS 3.5 kom ut, så jag börjar mina redigeringar från den versionen nu. Men test 1, 2, 3 var hjälpsamma ändå.
+A modified version of WonderCMS v3.5.0, which is a lovely flatfile cms project in PHP.
+I wanted to make it a bit more usable by changing how page editing works, incoporating blog as a standard instead of plugin, etc etc.  
 
-Jag jobbar nu lokalt med xampp.
+#Local dev setup
+Just do something like this, it's a php file...
+* Launch Apache from Xampp or equivalent tool
+* Throw evertyhing in a folder, htdocs in Xampp
+* Visit localhost/folderName
+* Enjoy
 
-Det var lite besvärligt att försöka dela upp alla funktioner i v1, så jag struntar i det.
-Ska se om jag kan justera det utan att plocka isär hela klassen / ändra så lite som möjligt.
+The admin login PW should be "cE1IwMNt" at localhost/folder/login/, unless the database.json is removed and regenerated.
+No security neeed here, just throw the plaintext PW in the readme. Who cares!
 
-Lösenord för detta test: cE1IwMNt
-(så länge databasen inte raderas och skapas igen)
+I've included index-350.php as a reminder of what WonderCMS looked like when I started.
 
-Att Göra
-[x] för över landik temat från test3.
-[x] ta in admin som lokala filer istället för cdn.
-[x] byt wcms-admin.js/Css till icke-minifierade versioner, finns på wondercms github.
-[x] ta bort onödiga saker som GitHub-uppdatering, temabyte och plugins i settings-modalen
-[x] flytta upp tema-filer en nivå, eftersom man inte behöver byta teman längre behöver de inte vara i en undermapp....
-[x] döp om Menu i settings-modal till General / Allmänt.
-[x] flytta in blocks under specifika sidor i database.js -> pages -> blocks...
-[x] klura ut hur man kan skapa block objekt i databas.json baserat på sidmallen,om de inte finns redan.
+Changes from standard WonderCMS so far -> see changelog.md
 
-- verkar lite krångligt att få summernote att funka, men kanske kan göra något med editable-blocken som är enklare än summernote och min idé ovanför...
--- kan nog ta innehållet av blocket när de klickar på det, sätta det i ett formulär, låta användaren göra sitt, sätter tillbaka koden i blocket och spara det.   
--- på så vis sparas block som en html-sträng på backend, men på front-end ser de ut som fina input-element.
---- fick till det ganska OK... Men har inte löst nestade taggar, eller a och img attribut.
---- behöver snygga till submitknappen så den inte tar styling från förälder, kanske ge fält en titel om de är i formulär-läge. 
---- Jag borde kunna göra en lösning med contenteditable=true istället för formulär... I alla fall för block där jag redigerar innerhtml, kanske inte a.
---- har löst det nu så enkla texttaggar har contenteditable på sitt innerhtml och skickas med onblur, och avancerade taggar som img får ett formulär med varje attribut och en submit-knapp.
---- kan kanske göra något med autosize på textarea storlekar i formulär-läget, den ursprungliga lösningen använde det.
+TO DO / Current goals
+[ ] Make the onpage form-based block editing work for a, button and img tags.
+[ ] Clean up the onpage editing experience, my inefficient JS
+[ ] Improve the onpage editing experience, CSS could be better
+[ ] Test my block editing experience with unnecessarily nested html elements...
+[ ] Move menu items one layer up in the database.json, don't know why they are under 'config'.
+[ ] Make the settings modal easier to use or just a bit more 
+[ ] Figure out how the editing of page names via the settings modal should behave
+[ ] Fix alert CSS so it doesn't block the menu items
+[ ] Make it easy for users to create new pages based on default.php layout (currently done by navigating to non-existent page url)
+[ ] Make it easy for users to create new pages based on chosen layout file (currently doable by switching page to template in settings after page already exists)
 
-[x] ta bort type från block() funktionen nu när jag inte använder det, så mina block-taggar i layouts blir kortare...
-
-[x] Skapa en mapp för sidmallar i tema-mappen och ändra så sidorna laddar layout därifrån och data från database.json. loadThemeAndFunctions()
-[x] gör det möjligt för användaren att byta sidmall i settingsmodalen "current page"
-[x] När en sida skapas genom att gå till en 404-url som admin skapas två menyobjekt.. varför?.. Fixat. Skapa okänd sida kördes för varje block i en sidladdning.
-
-- skapa en blogg med archive / post templates och egen posts.js databas, basera på simpleBlog plugin.
-- förbättra det svenska översättningspluginet
-- fixa alerts så de inte täcken menyn längre
-- gör settingsmodalen tydligare/lättare att använda
-- klura ut redigering av sidnamn i settingsmodalens meny, det ändrar i databasen just nu, sidnamnet är en key under pages... 
-- varför är menuItems del av config i databasen? bör de inte vara ett steg upp, precis som pages? 
-
-- lägg upp filerna på github så jag kan hålla koll och inte skriver över något jag ändrat med orginalfunktionerna igen...
-
-
-
-####
-
-- installera användbara plugins och se hur de fungerar...
-- skapa eget plugin för blogg/custom post type
-- simple-statistics fatal error på bloggsida (längst ner)?
--
-- klura ut redigering av block med flera fält (htmx? forms?)
-- klura ut rendering av block med flera fält (component fil?)
-- 
-- Gör det enkelt för användare att skapa nya sidor baserat på theme.php (standard Wondercms)
-- Gör det enkelt för användare att skapa nya sidor baserat på mall.php (valbara sidmallar)
--- kan ha en dropdown i Current Page fliken av SettingsModalen som ändrar innehållet av pageName.js
--
-- Fortsätt med init-blocks från test2?
-- Rensa upp onödiga funktioner i index.php?
+WonderCMS plugins that I want to incorporate / make use of
+[ ] Get Wcms Simple Statistics plugin to work without errors
+[ ] Incorporate the Wcms SimpleBlog plugin / make own blog solution
+[ ] Improve the Swedish translation plugin, mostly the content

@@ -1,0 +1,202 @@
+{
+    "config": {
+        "siteTitle": "Website title",
+        "siteLang": "en",
+        "adminLang": "en",
+        "defaultPage": "home",
+        "login": "login",
+        "forceLogout": false,
+        "forceHttps": false,
+        "saveChangesPopup": false,
+        "modalPersistence": true,
+        "logoutToLoginScreen": true,
+        "password": "$2y$10$ZRkVF9fhgk5ePTIJc.lCveCj1gY7fSKPG4kDsJ7Hksf5\/L0P6VrUC",
+        "lastLogins": {
+            "2025\/03\/26 13:22:04": "::1",
+            "2025\/03\/26 01:06:10": "::1",
+            "2025\/03\/26 00:28:46": "::1",
+            "2025\/03\/25 19:37:24": "::1",
+            "2025\/03\/24 22:01:45": "::1"
+        },
+        "menuItems": {
+            "0": {
+                "name": "Home",
+                "slug": "home",
+                "visibility": "show",
+                "subpages": {}
+            },
+            "1": {
+                "name": "How to",
+                "slug": "how-to",
+                "visibility": "show",
+                "subpages": {}
+            },
+            "2": {
+                "name": "Omg",
+                "slug": "omg",
+                "visibility": "show",
+                "subpages": {}
+            },
+            "3": {
+                "name": "nicePage",
+                "slug": "nicepage",
+                "visibility": "show",
+                "subpages": {}
+            },
+            "4": {
+                "name": "Unknownpage",
+                "slug": "unknownpage",
+                "visibility": "show",
+                "subpages": {}
+            },
+            "5": {
+                "name": "Submit.php",
+                "slug": "submit-php",
+                "visibility": "hide",
+                "subpages": {}
+            },
+            "6": {
+                "name": "Logo Img",
+                "slug": "logo-img",
+                "visibility": "hide",
+                "subpages": {}
+            }
+        }
+    },
+    "pages": {
+        "404": {
+            "created": "2025-03-24T15:21:47+01:00",
+            "modified": "2025-03-24T15:21:47+01:00",
+            "visibility": "show",
+            "layout": "404",
+            "title": "404",
+            "keywords": "404",
+            "description": "404",
+            "content": "<center><h1>404 - Page not found<\/h1><\/center>",
+            "subpages": {},
+            "blocks": {}
+        },
+        "how-to": {
+            "created": "2025-03-24T15:21:47+01:00",
+            "modified": "2025-03-24T22:25:10+01:00",
+            "visibility": "show",
+            "layout": "default",
+            "title": "How to",
+            "keywords": "Enter, keywords, for, this page",
+            "description": "A page description is also good for search engines.",
+            "content": "<h2>Easy editing<\/h2>\n<p>After logging in, click anywhere to edit and click outside to save. Changes are live and shown immediately.<\/p>\n\n<h2>Create new page<\/h2>\n<p>Pages can be created in the Settings.<\/p>\n\n<h2>Start a blog or change your theme<\/h2>\n<p>To install, update or remove themes\/plugins, visit the Settings.<\/p>\n\n<h2><b>Support WonderCMS<\/b><\/h2>\n<p>WonderCMS is free for over 12 years.<br>\n<a href=\"https:\/\/swag.wondercms.com\" target=\"_blank\"><u>Click here to support us by getting a T-shirt<\/u><\/a> or <a href=\"https:\/\/www.wondercms.com\/donate\" target=\"_blank\"><u>with a donation<\/u><\/a>.<\/p>",
+            "subpages": {},
+            "blocks": {
+                "testblock": {
+                    "content": "<h2>About your websites<\/h2>\n\n<br>\n<p>Website description, contact form, mini map or anything else.<\/p>\n<p>This editable area is visible on all pages.<\/p>"
+                },
+                "anotherblock": {
+                    "content": "Lorem ipsum text"
+                }
+            }
+        },
+        "home": {
+            "created": "2025-03-24T22:02:39+01:00",
+            "modified": "2025-03-24T22:03:31+01:00",
+            "layout": "home",
+            "title": "Home",
+            "keywords": "Keywords, are, good, for, search, engines",
+            "description": "A short description is also good.",
+            "subpages": {},
+            "blocks": {
+                "testingheading1": {
+                    "content": "Solution made for you."
+                },
+                "heroDescription": {
+                    "content": "Bam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested."
+                },
+                "testingspans": {
+                    "content": "\n                        <div class=\"mt-4\">\n                            <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarante<\/p>\n                            <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p>\n                        <\/div>\n                        "
+                },
+                "heroHeading": {
+                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">great hero heading default text<\/h1>"
+                },
+                "image1": {
+                    "content": "<div class=\"md:py-9 py-5\">\n                    <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img nice\" class=\"mx-auto block\" \/>\n                <\/div>"
+                }
+            },
+            "visibility": "show"
+        },
+        "omg": {
+            "created": "2025-03-24T22:25:30+01:00",
+            "modified": "2025-03-25T19:38:01+01:00",
+            "layout": "about",
+            "title": "Omg",
+            "keywords": "Keywords, are, good, for, search, engines",
+            "description": "A short description is also good.",
+            "subpages": {},
+            "blocks": {
+                "testblock": {
+                    "content": "testContentsss"
+                },
+                "anotherblock": {
+                    "content": "This default text is given in page templateee"
+                },
+                "heroHeading": {
+                    "content": "Lorem ipsum text"
+                }
+            },
+            "visibility": "show",
+            "content": "<h2>Click to create contentz<\/h2>",
+            "pageLayout": "default"
+        },
+        "nicepage": {
+            "created": "2025-03-24T23:18:13+01:00",
+            "modified": "2025-03-26T18:50:18+01:00",
+            "layout": "default",
+            "title": "Nicepage",
+            "keywords": "Keywords, are, good, for, search, engines",
+            "description": "A short description is also good.",
+            "subpages": {},
+            "blocks": {
+                "testblock": {
+                    "content": "Lorem ipsum texts"
+                },
+                "anotherblock": {
+                    "content": "This default text is given in page template"
+                }
+            },
+            "visibility": "show",
+            "content": "<h2>Click here add content<\/h2>"
+        },
+        "unknownpage": {
+            "created": "2025-03-24T23:19:03+01:00",
+            "modified": "2025-03-24T23:19:23+01:00",
+            "layout": "default",
+            "title": "Unknownpage",
+            "keywords": "Keywords, are, good, for, search, engines",
+            "description": "A short description is also good.",
+            "subpages": {},
+            "blocks": {},
+            "visibility": "show",
+            "content": "<h2>Click to create content, nice<\/h2>"
+        },
+        "submit.php": {
+            "created": "2025-03-26T02:18:19+01:00",
+            "modified": "2025-03-26T02:18:19+01:00",
+            "layout": "theme",
+            "title": "Submit.php",
+            "keywords": "Keywords, are, good, for, search, engines",
+            "description": "A short description is also good.",
+            "subpages": {},
+            "blocks": {},
+            "visibility": "show"
+        },
+        "logo-img": {
+            "created": "2025-03-26T16:08:04+01:00",
+            "modified": "2025-03-26T16:08:04+01:00",
+            "layout": "theme",
+            "title": "Logo Img",
+            "keywords": "Keywords, are, good, for, search, engines",
+            "description": "A short description is also good.",
+            "subpages": {},
+            "blocks": {},
+            "visibility": "hide"
+        }
+    }
+}

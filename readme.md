@@ -1,11 +1,11 @@
-A modified version of WonderCMS v3.5.0, which is a lovely flatfile cms project in PHP.
+A modified version of WonderCMS v3.5.0, which is a lovely flat-file cms project in PHP.
 
-I wanted to make it a bit more usable by changing how page editing works, incorporating some plugins as a standard, etc etc.  
+I wanted to make it a bit more usable by changing how page editing works, incorporating some plugins as a standard, etc. etc.  
 
 # Local dev setup
-Just do something like this, it's just a php file...
+Just do something like this, it's a php file...
 * Launch Apache from Xampp or equivalent tool
-* Throw evertyhing in a folder, htdocs in Xampp
+* Throw everything in a folder, htdocs in Xampp
 * Visit localhost/folderName
 * Enjoy
 
@@ -17,14 +17,14 @@ The admin login PW should be "cE1IwMNt" at localhost/folder/login/.
 
 If database.json is removed, it will be regenerated with a new password on next page load.
 
-No security neeed here, just throw the plaintext PW in the readme. Who cares!
+No security needed here, just throw the plaintext PW in the readme. Who cares!
 
 A lot of the editing/saving action is in the wcms-admin.js file.
 
 # Work so far
 I've included index-350.php as a reminder of what WonderCMS looked like when I started.
 
-Most changes from the WonderCMS 3.5.0 can be found in the changelog.md file.
+Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 
 # TO DO
 - [ ] Make sure regenerating the database.json still works as intended
@@ -36,6 +36,7 @@ Most changes from the WonderCMS 3.5.0 can be found in the changelog.md file.
 - [ ] Make the settings modal easier to use or just a bit more 
 - [ ] Figure out how the editing of page names via the settings modal should behave
 - [ ] Fix alert CSS so it doesn't block the menu items
+- [ ] Figure out how to make to set the home menuitem slug to '.' instead of 'home' without editing db.
 - [ ] Make it easy to create pages based on default.php (currently done by navigating to non-existent page url)
 - [ ] Make it easy to create pages based on chosen layout (currently done by switching layout in settings)
 

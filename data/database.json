@@ -12,16 +12,16 @@
         "logoutToLoginScreen": true,
         "password": "$2y$10$ZRkVF9fhgk5ePTIJc.lCveCj1gY7fSKPG4kDsJ7Hksf5\/L0P6VrUC",
         "lastLogins": {
+            "2025\/03\/26 22:04:45": "::1",
             "2025\/03\/26 13:22:04": "::1",
             "2025\/03\/26 01:06:10": "::1",
             "2025\/03\/26 00:28:46": "::1",
-            "2025\/03\/25 19:37:24": "::1",
-            "2025\/03\/24 22:01:45": "::1"
+            "2025\/03\/25 19:37:24": "::1"
         },
         "menuItems": {
             "0": {
                 "name": "Home",
-                "slug": "home",
+                "slug": ".",
                 "visibility": "show",
                 "subpages": {}
             },
@@ -47,18 +47,6 @@
                 "name": "Unknownpage",
                 "slug": "unknownpage",
                 "visibility": "show",
-                "subpages": {}
-            },
-            "5": {
-                "name": "Submit.php",
-                "slug": "submit-php",
-                "visibility": "hide",
-                "subpages": {}
-            },
-            "6": {
-                "name": "Logo Img",
-                "slug": "logo-img",
-                "visibility": "hide",
                 "subpages": {}
             }
         }
@@ -94,33 +82,6 @@
                     "content": "Lorem ipsum text"
                 }
             }
-        },
-        "home": {
-            "created": "2025-03-24T22:02:39+01:00",
-            "modified": "2025-03-24T22:03:31+01:00",
-            "layout": "home",
-            "title": "Home",
-            "keywords": "Keywords, are, good, for, search, engines",
-            "description": "A short description is also good.",
-            "subpages": {},
-            "blocks": {
-                "testingheading1": {
-                    "content": "Solution made for you."
-                },
-                "heroDescription": {
-                    "content": "Bam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested."
-                },
-                "testingspans": {
-                    "content": "\n                        <div class=\"mt-4\">\n                            <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarante<\/p>\n                            <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p>\n                        <\/div>\n                        "
-                },
-                "heroHeading": {
-                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">great hero heading default text<\/h1>"
-                },
-                "image1": {
-                    "content": "<div class=\"md:py-9 py-5\">\n                    <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img nice\" class=\"mx-auto block\" \/>\n                <\/div>"
-                }
-            },
-            "visibility": "show"
         },
         "omg": {
             "created": "2025-03-24T22:25:30+01:00",
@@ -176,27 +137,32 @@
             "visibility": "show",
             "content": "<h2>Click to create content, nice<\/h2>"
         },
-        "submit.php": {
-            "created": "2025-03-26T02:18:19+01:00",
-            "modified": "2025-03-26T02:18:19+01:00",
-            "layout": "theme",
-            "title": "Submit.php",
+        "home": {
+            "created": "2025-03-24T22:02:39+01:00",
+            "modified": "2025-03-26T22:05:24+01:00",
+            "layout": "home",
+            "title": "Home",
             "keywords": "Keywords, are, good, for, search, engines",
             "description": "A short description is also good.",
             "subpages": {},
-            "blocks": {},
+            "blocks": {
+                "testingheading1": {
+                    "content": "Solution made for you."
+                },
+                "heroDescription": {
+                    "content": "Bam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested."
+                },
+                "testingspans": {
+                    "content": "\n                        <div class=\"mt-4\">\n                            <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarantee<\/p>\n                            <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p>\n                        <\/div>\n                        "
+                },
+                "heroHeading": {
+                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">great hero heading default texts<\/h1>"
+                },
+                "image1": {
+                    "content": "<div class=\"md:py-9 py-5\">\n                    <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img nice\" class=\"mx-auto block\" \/>\n                <\/div>"
+                }
+            },
             "visibility": "show"
-        },
-        "logo-img": {
-            "created": "2025-03-26T16:08:04+01:00",
-            "modified": "2025-03-26T16:08:04+01:00",
-            "layout": "theme",
-            "title": "Logo Img",
-            "keywords": "Keywords, are, good, for, search, engines",
-            "description": "A short description is also good.",
-            "subpages": {},
-            "blocks": {},
-            "visibility": "hide"
         }
     }
 }

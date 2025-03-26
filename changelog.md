@@ -6,7 +6,7 @@
 - [x] Automatically create blocks in database.json if they are mentioned in a page template but don't exist in database.json.
 - [x] Create a folder for page layouts / templates in the theme folder, and make pages able to load a given layout.
 - [x] Make it possible for users to change the page layout / template of a page from the settings modal "current page" tab.
-- [x] When a logged in user (admin) goes to an non-existent page, create it imidiately in the DB for my blocks setup to work. Original only created page on saveAction.
+- [x] When a logged in user goes to an non-existent page, create it imidiately instead of waiting for saveAction.
 - [x] Give blocks some default content, which can be specified in page templates.
 - [x] Change the block editing experience to use contenteditable for basic text tags, still saves using onblur.
 - [x] Change the block editing experience to allow editing of image attritubutes via a form, saves on submit.

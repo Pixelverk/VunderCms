@@ -27,20 +27,21 @@ I've included index-350.php as a reminder of what WonderCMS looked like when I s
 Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 
 # TO DO
-- [ ] Make sure regenerating the database.json still works as intended
+- [x] Make sure regenerating the database.json still works as intended
 - [ ] Make the onpage form-based block editing work for a, button, btn and img tags.
 - [ ] Clean up the onpage editing experience, my inefficient JS
 - [ ] Improve the onpage editing experience, CSS could be better
 - [ ] Test my block editing experience with unnecessarily nested html elements...
 - [ ] Move menu items one layer up in the database.json, don't know why they are under 'config'.
-- [ ] Make the settings modal easier to use or just a bit more 
+- [ ] Make the settings modal easier to use or just a bit more easy to read. 
 - [ ] Figure out how the editing of page names via the settings modal should behave
 - [ ] Fix alert CSS so it doesn't block the menu items
 - [ ] Figure out how to make to set the home menuitem slug to '.' instead of 'home' without editing db.
+- [ ] Figure out how subpages work and if I ruined them with my changes yet...
 - [ ] Make it easy to create pages based on default.php (currently done by navigating to non-existent page url)
 - [ ] Make it easy to create pages based on chosen layout (currently done by switching layout in settings)
 
-Existing WonderCMS plugins I might incorporate
+Related to existing WonderCMS plugins
 - [ ] Get Wcms Simple Statistics plugin to work without errors
 - [ ] Incorporate the Wcms SimpleBlog plugin / make own blog solution
 - [ ] Improve the Swedish translation plugin, mostly the content

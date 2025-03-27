@@ -484,7 +484,7 @@ class Wcms
 				'siteLang' => 'en',
 				'adminLang' => 'en',
 				'defaultPage' => 'home',
-				'login' => 'loginURL',
+				'login' => 'login',
 				'forceLogout' => false,
 				'forceHttps' => false,
 				'saveChangesPopup' => false,
@@ -515,6 +515,7 @@ class Wcms
 					'title' => '404',
 					'keywords' => '404',
 					'description' => '404',
+					'layout' => 'default',
 					'blocks' => new stdClass(),
 					'content' => '<center><h1>404 - Page not found</h1></center>',
 					self::DB_PAGES_SUBPAGE_KEY => new stdClass()
@@ -526,6 +527,7 @@ class Wcms
 					'title' => 'Home',
 					'keywords' => 'Enter, page, keywords, for, search, engines',
 					'description' => 'A page description is also good for search engines.',
+					'layout' => 'default',
 					'blocks' => new stdClass(),
 					'content' => '<h1>Welcome to your website</h1>
 
@@ -543,6 +545,7 @@ class Wcms
 					'title' => 'How to',
 					'keywords' => 'Enter, keywords, for, this page',
 					'description' => 'A page description is also good for search engines.',
+					'layout' => 'default',
 					'blocks' => new stdClass(),
 					'content' => '<h2>Easy editing</h2>
 <p>After logging in, click anywhere to edit and click outside to save. Changes are live and shown immediately.</p>

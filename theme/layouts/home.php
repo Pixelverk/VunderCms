@@ -25,7 +25,7 @@
                     <div class="mt-6">
                         <!--<h1 class="md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]"><? #$Wcms->block('heroHeading'); ?></h1> -->
                         <?= $Wcms->block('heroHeading', "<h1 class='md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]'>great hero heading default text</h1>"); ?>
-                        <p class="text-muted mt-6"><?= $Wcms->block('heroDescription', 'string', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested.'); ?></p>
+                        <p class="text-muted mt-6"><?= $Wcms->block('heroDescription', 'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested.'); ?></p>
                         <?= $Wcms->block('testingspans', '
                         <div class="mt-4">
                             <p class="mb-0 text-muted"><span class="w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom"></span>Satisfied Guarantee</p>

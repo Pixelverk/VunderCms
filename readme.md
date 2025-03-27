@@ -31,12 +31,13 @@ This is how I plan to build new sites and page layouts quickly.
 3. Extract head, header and footer html into their respective theme/includes files
 4. Add php tags like asset() and page() to the /includes files to get urls and page info
 5. Convert each .html in /layouts into .php pages, adding asset(), block() and page() tags as needed 
-6. Make sure to include the global Wcms instance in each layout file, <?php global $Wcms ?>
+6. Make sure to include the global Wcms instance in each layout file, ```<?php global $Wcms ?>```
 
 The editable block() tags take two arguments, name and default string, like this;
-<?= $Wcms->block('testingbuttons', '<div class="mt-8"> <a href="#" class="btn-custom">Get Started</a> </div>'); ?>
 
-WonderCMS had the <?= $Wcms->page('content') ?> tag for wysiwig editing, but it's not very useful now with my block() changes. Might make it work again in the future.
+```<?= $Wcms->block('testingbuttons', '<div class="mt-8"> <a href="#" class="btn-custom">Get Started</a> </div>'); ?>```
+
+WonderCMS had the ```<?= $Wcms->page('content') ?>``` tag for wysiwig editing, but it's not very useful now with my block() changes. Might make it work again in the future.
 
 # Work so far
 I've included index-350.php as a reminder of what WonderCMS looked like when I started.

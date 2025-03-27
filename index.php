@@ -178,7 +178,7 @@ class Wcms
 		// Alert admin that page is hidden
 		if ($this->loggedIn) {
 			$loadingPage = null;
-			foreach ($this->get('config', 'menuItems') as $item) {
+			foreach ($this->get('menuItems') as $item) {
 				if ($this->currentPage === $item->slug) {
 					$loadingPage = $item;
 				}
@@ -492,19 +492,19 @@ class Wcms
 				'logoutToLoginScreen' => true,
 				'password' => password_hash($password, PASSWORD_DEFAULT),
 				'lastLogins' => [],
-				'menuItems' => [
-					'0' => [
-						'name' => 'Home',
-						'slug' => 'home',
-						'visibility' => 'show',
-						self::DB_MENU_ITEMS_SUBPAGE => new stdClass()
-					],
-					'1' => [
-						'name' => 'How to',
-						'slug' => 'how-to',
-						'visibility' => 'show',
-						self::DB_MENU_ITEMS_SUBPAGE => new stdClass()
-					]
+			],
+			'menuItems' => [
+				'0' => [
+					'name' => 'Home',
+					'slug' => 'home',
+					'visibility' => 'show',
+					self::DB_MENU_ITEMS_SUBPAGE => new stdClass()
+				],
+				'1' => [
+					'name' => 'How to',
+					'slug' => 'how-to',
+					'visibility' => 'show',
+					self::DB_MENU_ITEMS_SUBPAGE => new stdClass()
 				]
 			],
 			'pages' => [
@@ -588,7 +588,7 @@ class Wcms
 		$name = empty($name) ? 'empty' : str_replace([PHP_EOL, '<br>'], '', $name);
 		$slug = $this->createUniqueSlug($name, $menu);
 
-		$menuItems = $menuSelectionObject = clone $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$menuItems = $menuSelectionObject = clone $this->get(self::DB_MENU_ITEMS);
 		$menuTree = !empty($menu) || $menu === '0' ? explode('-', $menu) : [];
 		$slugTree = [];
 		if (count($menuTree)) {
@@ -612,7 +612,7 @@ class Wcms
 		$menuSelectionObject->{$menuCount}->slug = $slug;
 		$menuSelectionObject->{$menuCount}->visibility = $visibility;
 		$menuSelectionObject->{$menuCount}->{self::DB_MENU_ITEMS_SUBPAGE} = new StdClass;
-		$this->set(self::DB_CONFIG, self::DB_MENU_ITEMS, $menuItems);
+		$this->set(self::DB_MENU_ITEMS, $menuItems);
 
 		if ($createPage) {
 			$this->createPage($slugTree);
@@ -640,7 +640,7 @@ class Wcms
 		$name = empty($name) ? 'empty' : str_replace([PHP_EOL, '<br>'], '', $name);
 		$slug = $this->createUniqueSlug($name, $menu);
 
-		$menuItems = $menuSelectionObject = clone $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$menuItems = $menuSelectionObject = clone $this->get(self::DB_MENU_ITEMS);
 		$menuTree = explode('-', $menu);
 		$slugTree = [];
 		$menuKey = array_pop($menuTree);
@@ -662,7 +662,7 @@ class Wcms
 		$menuSelectionObject->{$menuKey}->slug = $slug;
 		$menuSelectionObject->{$menuKey}->visibility = $visibility;
 		$menuSelectionObject->{$menuKey}->{self::DB_MENU_ITEMS_SUBPAGE} = $menuSelectionObject->{$menuKey}->{self::DB_MENU_ITEMS_SUBPAGE} ?? new StdClass;
-		$this->set(self::DB_CONFIG, self::DB_MENU_ITEMS, $menuItems);
+		$this->set(self::DB_MENU_ITEMS, $menuItems);
 
 		$this->updatePageSlug($slugTree, $slug);
 		if ($this->get(self::DB_CONFIG, 'defaultPage') === implode('/', $slugTree)) {
@@ -683,7 +683,7 @@ class Wcms
 	public function createUniqueSlug(string $slug, string $menu = null): string
 	{
 		$slug = $this->slugify($slug);
-		$allMenuItems = $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$allMenuItems = $this->get(self::DB_MENU_ITEMS);
 		$menuCount = count(get_object_vars($allMenuItems));
 
 		// Check if it is subpage
@@ -790,7 +790,7 @@ class Wcms
 	private function findAndUpdateMenuKey(?string $menuKey, string $slug): string
 	{
 		$menuKeys = $menuKey !== null ? explode('-', $menuKey) : $menuKey;
-		$menuItems = json_decode(json_encode($this->get(self::DB_CONFIG, self::DB_MENU_ITEMS)), true);
+		$menuItems = json_decode(json_encode($this->get(self::DB_MENU_ITEMS)), true);
 		foreach ($menuKeys as $key) {
 			$menuItems = $menuItems[$key][self::DB_MENU_ITEMS_SUBPAGE] ?? [];
 		}
@@ -1001,7 +1001,7 @@ EOT;
 		$slugTree = explode('/', $_GET['delete']);
 		$this->deletePageFromDb($slugTree);
 
-		$allMenuItems = $selectedMenuItem = clone $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$allMenuItems = $selectedMenuItem = clone $this->get(self::DB_MENU_ITEMS);
 		if (count(get_object_vars($allMenuItems)) === 1 && count($slugTree) === 1) {
 			$this->alert('danger', 'Last page cannot be deleted - at least one page must exist.');
 			$this->redirect();
@@ -1027,7 +1027,7 @@ EOT;
 		if ($treeIntersect === $slugTree) {
 			$this->set(self::DB_CONFIG, 'defaultPage', $allMenuItems->{0}->slug);
 		}
-		$this->set(self::DB_CONFIG, self::DB_MENU_ITEMS, $allMenuItems);
+		$this->set(self::DB_MENU_ITEMS, $allMenuItems);
 
 		$this->alert('success', 'Page <b>' . $slug . '</b> deleted.');
 		$this->redirect();
@@ -1137,7 +1137,7 @@ EOT;
 	private function syncPageVisibility(): void
 	{
 		$pages = clone $this->get(self::DB_PAGES_KEY);
-		$menuItems = $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$menuItems = $this->get(self::DB_MENU_ITEMS);
 	
 		// Recursive function to sync visibility through hierarchy
 		$syncVisibility = function($menuNode, $pageNode) use (&$syncVisibility) {
@@ -1404,7 +1404,7 @@ EOT;
 	public function menu(): string
 	{
 		$output = '';
-		foreach ($this->get('config', 'menuItems') as $item) {
+		foreach ($this->get('menuItems') as $item) {
 			if ($item->visibility === 'hide') {
 				continue;
 			}
@@ -1478,7 +1478,7 @@ EOT;
 		}
 
 		$menuTree = explode('-', $menu);
-		$menuItems = $menuSelectionObject = clone $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$menuItems = $menuSelectionObject = clone $this->get(self::DB_MENU_ITEMS);
 
 		// Find sub menu item
 		if ($menuTree) {
@@ -1490,7 +1490,7 @@ EOT;
 		}
 
 		$menuSelectionObject->visibility = $visibility;
-		$this->set(self::DB_CONFIG, self::DB_MENU_ITEMS, $menuItems);
+		$this->set(self::DB_MENU_ITEMS, $menuItems);
 		$this->syncPageVisibility(); 
 	}
 
@@ -1510,7 +1510,7 @@ EOT;
 		}
 		$menuTree = explode('-', $menu);
 		$mainParentMenu = $selectedMenuKey = array_shift($menuTree);
-		$menuItems = $menuSelectionObject = clone $this->get(self::DB_CONFIG, self::DB_MENU_ITEMS);
+		$menuItems = $menuSelectionObject = clone $this->get(self::DB_MENU_ITEMS);
 
 		// Sorting of subpages in menu
 		if ($menuTree) {
@@ -1529,7 +1529,7 @@ EOT;
 		$menuSelectionObject->{$selectedMenuKey} = $targetMenu;
 		$menuSelectionObject->{$targetPosition} = $selectedMenu;
 
-		$this->set(self::DB_CONFIG, self::DB_MENU_ITEMS, $menuItems);
+		$this->set(self::DB_MENU_ITEMS, $menuItems);
 	}
 
 	/**
@@ -1895,7 +1895,7 @@ EOT;
 								$output .= '
 													</div>
 													<div role="tabpanel" class="tab-pane" id="general">';
-								$items = get_mangled_object_vars($this->get('config', 'menuItems'));
+								$items = get_mangled_object_vars($this->get('menuItems'));
 								reset($items);
 								$first = key($items);
 								end($items);
@@ -1923,7 +1923,7 @@ EOT;
 							 <p class="subTitle">Page to display on homepage</p>
 							 <div class="change">
 								<select id="changeDefaultPage" class="wform-control" name="defaultPage">';
-		$items = $this->get('config', 'menuItems');
+		$items = $this->get('menuItems');
 		$defaultPage = $this->get('config', 'defaultPage');
 		foreach ($items as $item) {
 			$output .= $this->renderDefaultPageOptions($item, $defaultPage);

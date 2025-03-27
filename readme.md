@@ -30,12 +30,15 @@ Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 - [x] Make sure regenerating the database.json still works as intended
 - [x] Make the onpage form-based block editing work for a, button, btn and img tags.
 - [x] Clean up the onpage editing experience, my inefficient JS
-- [ ] Improve the onpage editing experience, CSS could be better
+- [ ] Improve the onpage editing experience, CSS could be better and form elements need labels.
 - [ ] Test my block editing experience with unnecessarily nested html elements...
-- [ ] Move menu items one layer up in the database.json, don't know why they are under 'config'.
+- [x] Move menu items one layer up in the database.json, don't know why they are under 'config'.
 - [ ] Make the settings modal easier to use or just a bit more easy to read. 
 - [ ] Figure out how the editing of page names via the settings modal should behave
 - [ ] Fix alert CSS so it doesn't block the menu items
+- [ ] Clean up unnecessary white space in block save string?
+- [ ] Check if the original page loading could be simplified, since pages now just use 'layout' and 'blocks'.
+- [ ] Add css and js strings to the database.json, to be set in settings modal, for stuff like analytics scripts. 
 - [ ] Figure out how to make to set the home menuitem slug to '.' instead of 'home' without editing db.
 - [ ] Figure out how subpages work and if I ruined them with my changes yet...
 - [ ] Make it easy to create pages based on default.php (currently done by navigating to non-existent page url)
@@ -47,3 +50,6 @@ Related to existing WonderCMS plugins
 - [ ] Improve the Swedish translation plugin, mostly the content
 - [ ] The Wcms contact form plugin seems unseful as well
 - [ ] The Wcms simple SEO seems useful for sitemap / robots.txt
+
+Maybe
+- [ ] Explore using HTMX for editing / saving block content

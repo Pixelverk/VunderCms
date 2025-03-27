@@ -350,7 +350,7 @@ const wcmsAdminActions = {
                                             fieldContent = child.value;
                                             tagInContent[i].setAttribute(att, fieldContent);
                                             serializer = new XMLSerializer();
-                                            newStuff = serializer.serializeToString(doc);                                     
+                                            newStuff = serializer.serializeToString(doc);
                                         }
                                         
                                     }
@@ -365,7 +365,8 @@ const wcmsAdminActions = {
 
                 split1 = newStuff.split("<body>");
                 split2 = split1[1].split("</body>");
-                newStuff = split2[0];
+                findSpaces = split2[0].match(/\S+/g);
+                newStuff = findSpaces.join(' ');
                 
                 wcmsAdminActions.contentSave(
                     targetId,
@@ -387,7 +388,8 @@ const wcmsAdminActions = {
             newElement.onblur = function () {
                 newElement.removeAttribute('contenteditable');
     
-                newStuff = this.innerHTML
+                findSpaces = this.innerHTML.match(/\S+/g);
+                newStuff = findSpaces.join(' ');
             
                 wcmsAdminActions.contentSave(
                     targetId,

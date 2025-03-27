@@ -33,11 +33,10 @@
                         </div>
                         '); ?>
                         <?= $Wcms->block('testingbuttons', '
-                        <div class="mt-8">
-                            <a href="#" class="btn-custom">Get Started</a>
-                        </div>
+                            <div class="mt-8">
+                                <a href="#" class="btn-custom">Get Started</a>
+                            </div>
                         '); ?>
-                        
                     </div>
                 </div>
             </div>

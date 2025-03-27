@@ -35,8 +35,8 @@ Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 - [x] Move menu items one layer up in the database.json, don't know why they are under 'config'.
 - [ ] Make the settings modal easier to use or just a bit more easy to read. 
 - [ ] Figure out how the editing of page names via the settings modal should behave
-- [ ] Fix alert CSS so it doesn't block the menu items
-- [ ] Clean up unnecessary white space in block save string?
+- [x] Fix alert CSS so it doesn't block the menu items
+- [x] Clean up unnecessary white space in block save strings
 - [ ] Check if the original page loading could be simplified, since pages now just use 'layout' and 'blocks'.
 - [ ] Add css and js strings to the database.json, to be set in settings modal, for stuff like analytics scripts. 
 - [ ] Figure out how to make to set the home menuitem slug to '.' instead of 'home' without editing db.

@@ -149,20 +149,20 @@
                 "testingheading1": {
                     "content": "Solution made for you."
                 },
-                "heroDescription": {
-                    "content": "Wam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested."
-                },
                 "testingspans": {
-                    "content": "\n                        <div class=\"mt-4\">\n                            <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarantee<\/p>\n                            <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p>\n                        <\/div>\n                        "
+                    "content": "<div class=\"mt-4\"> <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarante ey<\/p> <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p> <\/div>"
                 },
                 "heroHeading": {
-                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">great hero heading default texts<\/h1>"
-                },
-                "image1": {
-                    "content": "<div class=\"md:py-9 py-5\">\n                    <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img nice\" class=\"mx-auto block\" \/>\n                <\/div>"
+                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">Great hero heading default text<\/h1>"
                 },
                 "testingbuttons": {
-                    "content": "<div class=\"mt-8\">\n                            <a href=\"https:\/\/google.com\" class=\"btn-custom\">Get Started<\/a>\n                        <\/div>\n                        "
+                    "content": "<div class=\"mt-8\"><a href=\"https:\/\/google.com\" class=\"btn-custom\">Get Started<\/a><\/div>"
+                },
+                "heroDescription": {
+                    "content": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime!<div>New line, but its in a div?<\/div>"
+                },
+                "image1": {
+                    "content": "<div class=\"md:py-9 py-5\"> <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img\" class=\"mx-auto block\" \/> <\/div>"
                 }
             },
             "visibility": "show"

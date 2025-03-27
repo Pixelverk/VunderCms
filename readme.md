@@ -21,6 +21,23 @@ No security needed here, just throw the plaintext PW in the readme. Who cares!
 
 A lot of the editing/saving action is in the wcms-admin.js file.
 
+# Theme building
+Creating a new site using this CMS is all replacing the theme.
+
+This is how I plan to build new sites and page layouts quickly.
+
+1. Get a html site template that someone else spent several hours designing
+2. Put any assets into the theme/assets folder, and html pages in the theme/layouts folder
+3. Extract head, header and footer html into their respective theme/includes files
+4. Add php tags like asset() and page() to the /includes files to get urls and page info
+5. Convert each .html in /layouts into .php pages, adding asset(), block() and page() tags as needed 
+6. Make sure to include the global Wcms instance in each layout file, <?php global $Wcms ?>
+
+The editable block() tags take two arguments, name and default string, like this;
+<?= $Wcms->block('testingbuttons', '<div class="mt-8"> <a href="#" class="btn-custom">Get Started</a> </div>'); ?>
+
+WonderCMS had the <?= $Wcms->page('content') ?> tag for wysiwig editing, but it's not very useful now with my block() changes. Might make it work again in the future.
+
 # Work so far
 I've included index-350.php as a reminder of what WonderCMS looked like when I started.
 
@@ -37,10 +54,10 @@ Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 - [ ] Figure out how the editing of page names via the settings modal should behave
 - [x] Fix alert CSS so it doesn't block the menu items
 - [x] Clean up unnecessary white space in block save strings
-- [ ] Check if the original page loading could be simplified, since pages now just use 'layout' and 'blocks'.
-- [ ] Add css and js strings to the database.json, to be set in settings modal, for stuff like analytics scripts. 
+- [ ] Add head/footer js strings that can be set in settings modal, for stuff like analytics scripts.
 - [ ] Figure out how to make to set the home menuitem slug to '.' instead of 'home' without editing db.
 - [ ] Figure out how subpages work and if I ruined them with my changes yet...
+- [ ] Either remove the <?= $Wcms->page('content') ?> block or make it use WonderCMS summernote wysiwyg editing.
 - [ ] Make it easy to create pages based on default.php (currently done by navigating to non-existent page url)
 - [ ] Make it easy to create pages based on chosen layout (currently done by switching layout in settings)
 

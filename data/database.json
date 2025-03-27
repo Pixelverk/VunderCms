@@ -66,13 +66,13 @@
         },
         "how-to": {
             "created": "2025-03-24T15:21:47+01:00",
-            "modified": "2025-03-24T22:25:10+01:00",
+            "modified": "2025-03-27T18:32:08+01:00",
             "visibility": "show",
             "layout": "default",
             "title": "How to",
             "keywords": "Enter, keywords, for, this page",
             "description": "A page description is also good for search engines.",
-            "content": "<h2>Easy editing<\/h2>\n<p>After logging in, click anywhere to edit and click outside to save. Changes are live and shown immediately.<\/p>\n\n<h2>Create new page<\/h2>\n<p>Pages can be created in the Settings.<\/p>\n\n<h2>Start a blog or change your theme<\/h2>\n<p>To install, update or remove themes\/plugins, visit the Settings.<\/p>\n\n<h2><b>Support WonderCMS<\/b><\/h2>\n<p>WonderCMS is free for over 12 years.<br>\n<a href=\"https:\/\/swag.wondercms.com\" target=\"_blank\"><u>Click here to support us by getting a T-shirt<\/u><\/a> or <a href=\"https:\/\/www.wondercms.com\/donate\" target=\"_blank\"><u>with a donation<\/u><\/a>.<\/p>",
+            "content": "<h2>Easy editing<\/h2> <p>After logging in, click anywhere to edit and click outside to save. Changes are live and shown immediately.<\/p> <h2>Create new page<\/h2> <p>Pages can be created in the Settings.<\/p> <h2>Start a blog or change your theme<\/h2> <p>To install, update or remove themes\/plugins, visit the Settings.<\/p> <h2><b>Support WonderCMS<\/b><\/h2> <p>WonderCMS is free for over 12 years.<br> <a href=\"https:\/\/swag.wondercms.com\" target=\"_blank\"><u>Click here to support us by getting a T-shirt<\/u><\/a> or <a href=\"https:\/\/www.wondercms.com\/donate\" target=\"_blank\"><u>with a donation<\/u><\/a>.<\/p>",
             "subpages": {},
             "blocks": {
                 "testblock": {
@@ -108,7 +108,7 @@
         },
         "nicepage": {
             "created": "2025-03-24T23:18:13+01:00",
-            "modified": "2025-03-26T18:50:18+01:00",
+            "modified": "2025-03-27T18:26:44+01:00",
             "layout": "default",
             "title": "Nicepage",
             "keywords": "Keywords, are, good, for, search, engines",
@@ -123,7 +123,7 @@
                 }
             },
             "visibility": "show",
-            "content": "<h2>Click here add content<\/h2>"
+            "content": "<h2>Click here add contentasd<\/h2>"
         },
         "unknownpage": {
             "created": "2025-03-24T23:19:03+01:00",
@@ -153,7 +153,7 @@
                     "content": "<div class=\"mt-4\"> <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarante ey<\/p> <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p> <\/div>"
                 },
                 "heroHeading": {
-                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">Great hero heading default text<\/h1>"
+                    "content": "<h1 class=\"md:text-[46px] text-[36px] font-bold capitalize leading-[1.2]\">Great hero heading default texts<\/h1>"
                 },
                 "testingbuttons": {
                     "content": "<div class=\"mt-8\"><a href=\"https:\/\/google.com\" class=\"btn-custom\">Get Started<\/a><\/div>"

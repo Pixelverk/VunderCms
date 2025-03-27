@@ -289,7 +289,7 @@ const wcmsAdminActions = {
         elementPick = 'div';
  
         advancedTags.forEach((tag) => {
-            if (content.includes('<'+tag)){
+            if (content.includes('<'+tag) && target.dataset.target != 'pages' ){
                 elementPick = 'form';
             }
         });

@@ -22,7 +22,7 @@ No security needed here, just throw the plaintext PW in the readme. Who cares!
 A lot of the editing/saving action is in the wcms-admin.js file.
 
 # Theme building
-Creating a new site using this CMS is all replacing the theme.
+Creating a new site using this CMS is all about replacing the theme.
 
 This is how I plan to build new sites and page layouts quickly.
 
@@ -33,7 +33,9 @@ This is how I plan to build new sites and page layouts quickly.
 5. Convert each .html in /layouts into .php pages, adding asset(), block() and page() tags as needed 
 6. Make sure to include the global Wcms instance in each layout file, ```<?php global $Wcms ?>```
 
-The editable block() tags take two arguments, name and default string, like this;
+An editable part of a layout is created by calling Wcms->block().
+
+There are two arguments, the block name and some optional default content, like this;
 
 ```<?= $Wcms->block('testingbuttons', '<div class="mt-8"> <a href="#" class="btn-custom">Get Started</a> </div>'); ?>```
 

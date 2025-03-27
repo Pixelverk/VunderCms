@@ -4,7 +4,7 @@
         "siteLang": "en",
         "adminLang": "en",
         "defaultPage": "home",
-        "login": "login",
+        "login": "loginURL",
         "forceLogout": false,
         "forceHttps": false,
         "saveChangesPopup": false,
@@ -12,11 +12,11 @@
         "logoutToLoginScreen": true,
         "password": "$2y$10$ZRkVF9fhgk5ePTIJc.lCveCj1gY7fSKPG4kDsJ7Hksf5\/L0P6VrUC",
         "lastLogins": {
+            "2025\/03\/27 17:02:27": "::1",
             "2025\/03\/26 22:04:45": "::1",
             "2025\/03\/26 13:22:04": "::1",
             "2025\/03\/26 01:06:10": "::1",
-            "2025\/03\/26 00:28:46": "::1",
-            "2025\/03\/25 19:37:24": "::1"
+            "2025\/03\/26 00:28:46": "::1"
         }
     },
     "menuItems": {

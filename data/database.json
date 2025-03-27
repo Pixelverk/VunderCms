@@ -150,7 +150,7 @@
                     "content": "Solution made for you."
                 },
                 "heroDescription": {
-                    "content": "Bam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested."
+                    "content": "Wam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime The standard chunk of those interested."
                 },
                 "testingspans": {
                     "content": "\n                        <div class=\"mt-4\">\n                            <p class=\"mb-0 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Satisfied Guarantee<\/p>\n                            <p class=\"mb-0 mt-2 text-muted\"><span class=\"w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom\"><\/span>Awesome Support 24\/7<\/p>\n                        <\/div>\n                        "
@@ -160,6 +160,9 @@
                 },
                 "image1": {
                     "content": "<div class=\"md:py-9 py-5\">\n                    <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img nice\" class=\"mx-auto block\" \/>\n                <\/div>"
+                },
+                "testingbuttons": {
+                    "content": "<div class=\"mt-8\">\n                            <a href=\"https:\/\/google.com\" class=\"btn-custom\">Get Started<\/a>\n                        <\/div>\n                        "
                 }
             },
             "visibility": "show"

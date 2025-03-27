@@ -28,8 +28,8 @@ Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 
 # TO DO
 - [x] Make sure regenerating the database.json still works as intended
-- [ ] Make the onpage form-based block editing work for a, button, btn and img tags.
-- [ ] Clean up the onpage editing experience, my inefficient JS
+- [x] Make the onpage form-based block editing work for a, button, btn and img tags.
+- [x] Clean up the onpage editing experience, my inefficient JS
 - [ ] Improve the onpage editing experience, CSS could be better
 - [ ] Test my block editing experience with unnecessarily nested html elements...
 - [ ] Move menu items one layer up in the database.json, don't know why they are under 'config'.

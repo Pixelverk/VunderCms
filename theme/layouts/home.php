@@ -32,9 +32,12 @@
                             <p class="mb-0 mt-2 text-muted"><span class="w-2 h-2 inline-block rounded-full mr-2 relative top-[-2px] bg-custom"></span>Awesome Support 24/7</p>
                         </div>
                         '); ?>
+                        <?= $Wcms->block('testingbuttons', '
                         <div class="mt-8">
                             <a href="#" class="btn-custom">Get Started</a>
                         </div>
+                        '); ?>
+                        
                     </div>
                 </div>
             </div>

@@ -275,36 +275,7 @@ const wcmsAdminActions = {
     },
 
     /**
-     * Create editable field after clicking on div
-     * @param editableTarget
-     */
-    backup_editableTextArea: (editableTarget) => {
-        const target = editableTarget;
-        const content = target.innerHTML;
-        const targetId = target.getAttribute('id');
-
-        const newElement = document.createElement('textarea');
-        
-        newElement.setAttribute('id', targetId + '_field');
-        newElement.innerHTML = content;
-        newElement.onblur = function () {
-            wcmsAdminActions.contentSave(
-                targetId,
-                this.value,
-                target.dataset.target,
-                target.dataset.menu,
-                target.dataset.visibility,
-                content
-            );
-        }
-
-        editableTarget.innerHTML = '';
-        editableTarget.appendChild(newElement);
-    },
-
-    /**
-     * trying without form, contenteditable instead
-     * Create editable field after clicking on div
+     * Create editable field/form after clicking on div
      * @param editableTarget
      */
     editableTextArea: (editableTarget) => {
@@ -312,24 +283,23 @@ const wcmsAdminActions = {
         const content = target.innerHTML;
         const targetId = target.getAttribute('id');
 
-        // this works for text fields like p, h1, span, div, etc.
-        // I need to check if the field has a, img or button tags and do something else for them.
-        advancedTags = ['a', 'button', 'img'];
-        editableAttributes = ['src', 'alt', 'href', 'target']
-        
-        let elementPick = '';
-        if (content.includes('<img')){ // need to check for other advancedTags as well
-            elementPick = 'form'
-        } else {
-            elementPick = 'div'
-        }
+        // figure out if the editableTarget that was clicked is a simple text element or has attributes that needs editing
+        advancedTags = ['a', 'button', 'btn', 'img'];
+        editableAttributes = ['src', 'alt', 'href', 'target'];
+        elementPick = 'div';
+ 
+        advancedTags.forEach((tag) => {
+            if (content.includes('<'+tag)){
+                elementPick = 'form';
+            }
+        });
 
+        // create a new editable element to go inside the editableTarget that was just clicked
         const newElement = document.createElement(elementPick);
         newElement.setAttribute('id', targetId + '_field');
         
-        if (elementPick != 'div'){ // might combine this with the elementpick below?
-            // pick out the editable attributes here?
-            // for each newElement.children, get editableAttributes, create a field?
+        if (elementPick == 'form'){
+            // the new editable element is a form with a textarea for each attribute from advancedTags found earlier
             advancedTags.forEach((tag) => {
                 parser = new DOMParser();
                 doc = parser.parseFromString(content, 'text/html');
@@ -358,36 +328,11 @@ const wcmsAdminActions = {
             s.setAttribute('value',"Submit");
             newElement.appendChild(s);
 
-        } else {
-            newElement.innerHTML = content;
-            newElement.setAttribute('contenteditable', 'true');
-        } 
-
-        
-
-        if (elementPick == 'div'){
-            newElement.onblur = function () {
-                newElement.removeAttribute('contenteditable');
-    
-                newStuff = this.innerHTML
-            
-                wcmsAdminActions.contentSave(
-                    targetId,
-                    newStuff,
-                    target.dataset.target,
-                    target.dataset.menu,
-                    target.dataset.visibility,
-                    content
-                );
-            }
-
-        } else {
-
+            // save data when form submit button is pressed
             newElement.onsubmit = function () {
  
                 newStuff = content;
-    
-                // put back the edited attributes here?.. take value from the textareas and setAttribute of the tagInContent?
+
                 advancedTags.forEach((tag) => {
                     parser = new DOMParser();
                     doc = parser.parseFromString(content, 'text/html');
@@ -432,110 +377,35 @@ const wcmsAdminActions = {
                 );
                 return false;
             }
+
+        } else {
+            // the new editable element is not a form, just a div with text tags in it
+            newElement.innerHTML = content;
+            newElement.setAttribute('contenteditable', 'true');
+
+            // save data when focus is removed from the editable element
+            newElement.onblur = function () {
+                newElement.removeAttribute('contenteditable');
+    
+                newStuff = this.innerHTML
             
+                wcmsAdminActions.contentSave(
+                    targetId,
+                    newStuff,
+                    target.dataset.target,
+                    target.dataset.menu,
+                    target.dataset.visibility,
+                    content
+                );
+            }
         }
 
+        // place the new editable element inside the editableTarget
         editableTarget.innerHTML = '';
         editableTarget.appendChild(newElement);
-    },
-
-    /**
-     * My attempt at making multiple fields...
-     * Create editable fields after clicking on div
-     * @param editableTarget
-     */
-    form_editableTextArea: (editableTarget) => {
-        const target = editableTarget;
-        const oldContent = target.innerHTML;
-        const targetId = target.getAttribute('id');
-
-        let newForm = document.createElement('form');
-
-        tags = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',  'a', 'button', 'span', 'div'];
-
-        tagFound = false
-        tags.forEach((tag) => {
-            parser = new DOMParser();
-            doc = parser.parseFromString(oldContent, 'text/html');
-            tagInContent = doc.querySelectorAll(tag);
-
-            if (tagInContent.length != 0) {
-                tagFound = true
-                for (let i = 0; i < tagInContent.length; i++) {
-                    //field = document.createElement("input");
-                    field = document.createElement("textarea");
-                    field.setAttribute('type',"text");
-                    field.setAttribute('name', tag+i);
-                    //field.setAttribute('value', tagInContent[i].innerHTML);
-                    field.innerHTML = tagInContent[i].innerHTML;
-                    newForm.appendChild(field);
-                }
-            }
-        });
-
-        // handle a and img tag here somewhere.. nesting as well?
-
-        if (!tagFound){
-            field = document.createElement("textarea");
-            field.innerHTML = oldContent;
-            newForm.appendChild(field);
-        }
-
-        let s = document.createElement("input");
-        s.setAttribute('type',"submit");
-        s.setAttribute('value',"Submit");
-        newForm.appendChild(s);
-
-        newForm.setAttribute('id', targetId + '_field');
-
-        newForm.onsubmit = function () {
-            newContent = oldContent;
-            if (tagFound){
-                tags.forEach((tag) => {
-                    parser = new DOMParser();
-                    doc = parser.parseFromString(oldContent, 'text/html');
-                    list = doc.querySelectorAll(tag);
-        
-                    for (let i = 0; i < list.length; i++) {
-                        for (child of this.children) {
-                            if (child.value != 'Submit' && child.name == tag+i){
-                                list[i].innerHTML = child.value;
-                                serializer = new XMLSerializer();
-                                newContent = serializer.serializeToString(doc);
-                            }
-                        }
-                    }
-                });
-
-                split1 = newContent.split("<body>");
-                split2 = split1[1].split("</body>");
-                newContent = split2[0];
-
-            } else {
-                for (child of this.children) {
-                    if (child.value != 'Submit'){
-                        newContent = child.value
-                    }
-                }
-            }
-
-            wcmsAdminActions.contentSave(
-                targetId,
-                newContent,
-                target.dataset.target,
-                target.dataset.menu,
-                target.dataset.visibility,
-                oldContent
-            );
-        },
-
-        editableTarget.innerHTML = '';
-        editableTarget.appendChild(newForm);
     }
 
 }
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
     new wcmsAdmin();

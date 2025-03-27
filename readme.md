@@ -13,7 +13,7 @@ The theme folder has all the design / template stuff.
 
 Settings, page/block data and everything else is in data/database.json.
 
-The admin login PW should be "cE1IwMNt" at localhost/folder/login/.
+The admin login PW should be "cE1IwMNt" at localhost/folder/loginURL/.
 
 If database.json is removed, it will be regenerated with a new password on next page load.
 

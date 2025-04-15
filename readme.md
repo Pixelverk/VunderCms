@@ -65,11 +65,11 @@ Most changes from WonderCMS 3.5.0 can be found in the changelog.md file.
 - [ ] Make it easy to create pages based on chosen layout (currently done by switching layout in settings)
 
 Related to existing WonderCMS plugins
-- [ ] Get Wcms Simple Statistics plugin to work without errors
+- [ ] Get Wcms Simple Statistics plugin to work without errors.
 - [ ] Incorporate the Wcms SimpleBlog plugin / make own blog solution
 - [ ] Improve the Swedish translation plugin, mostly the content
 - [ ] The Wcms contact form plugin seems unseful as well
-- [ ] The Wcms simple SEO seems useful for sitemap / robots.txt
+- [x] The Wcms simple SEO seems useful for sitemap / robots.txt, added and works as expected.
 
 Maybe
 - [ ] Explore using HTMX for editing / saving block content

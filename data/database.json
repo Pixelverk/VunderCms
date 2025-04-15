@@ -12,11 +12,11 @@
         "logoutToLoginScreen": true,
         "password": "$2y$10$ZRkVF9fhgk5ePTIJc.lCveCj1gY7fSKPG4kDsJ7Hksf5\/L0P6VrUC",
         "lastLogins": {
+            "2025\/04\/15 19:26:04": "::1",
+            "2025\/04\/15 19:22:23": "::1",
             "2025\/03\/27 17:02:27": "::1",
             "2025\/03\/26 22:04:45": "::1",
-            "2025\/03\/26 13:22:04": "::1",
-            "2025\/03\/26 01:06:10": "::1",
-            "2025\/03\/26 00:28:46": "::1"
+            "2025\/03\/26 13:22:04": "::1"
         }
     },
     "menuItems": {
@@ -159,13 +159,14 @@
                     "content": "<div class=\"mt-8\"><a href=\"https:\/\/google.com\" class=\"btn-custom\">Get Started<\/a><\/div>"
                 },
                 "heroDescription": {
-                    "content": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime!<div>New line, but its in a div?<\/div>"
+                    "content": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime! not a new line..."
                 },
                 "image1": {
                     "content": "<div class=\"md:py-9 py-5\"> <img src=\"theme\/assets\/images\/clients\/1.png\" alt=\"logo-img\" class=\"mx-auto block\" \/> <\/div>"
                 }
             },
-            "visibility": "show"
+            "visibility": "show",
+            "content": "<h2>Click here add content<\/h2>"
         }
     }
 }

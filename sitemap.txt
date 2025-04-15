@@ -1,0 +1,6 @@
+http://localhost/wondercms/vunderCMS/
+http://localhost/wondercms/vunderCMS/.
+http://localhost/wondercms/vunderCMS/how-to
+http://localhost/wondercms/vunderCMS/omg
+http://localhost/wondercms/vunderCMS/nicepage
+http://localhost/wondercms/vunderCMS/unknownpage
